@@ -17,9 +17,9 @@ const memberEmailVerification = (data) =>
 
 const memberDefinitiveRegistration = (data) =>
     axios.post(domain + '/member/definitive_registration', {
-        token: data.token,
         email: data.email,
         password: data.password,
+        token: data.token,
         name: data.name,
     })    
 

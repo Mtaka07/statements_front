@@ -20,11 +20,11 @@ public static emailVerification(token: string): Promise<any> {
     })
 }
 
-public static definitiveRegistration(token: string, email: string, password: string, name: string): Promise<any> {
+public static definitiveRegistration(email: string, password: string, token: string, name: string): Promise<any> {
     return this.createPromise(STATEMENT.memberDefinitiveRegistration, {
-        token:token,
         email:email,
         password:password,
+        token:token,
         name:name,
     })
 }
