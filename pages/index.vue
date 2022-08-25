@@ -1,20 +1,11 @@
 <template>
-<div>
-  <style scoped>
-      body {
-        background-image: url("/image/back.png");
-        background-repeat:no-repeat;
-        width:100;
-        height:100vh;
-        background-position:center; 
-      }
-    </style>
-  <div class="ly_conts">
-      <button class="el_btn el_btn--red" @click="registration()">新規会員登録</button>
-      <button class="el_btn el_btn--red" @click="login()">ログイン</button>
-      <button @click="back()" class="el_btn el_btn--gray hp_mb0">戻る</button>
+  <div class="contents">
+    <img src="image/logo.png" class="logo-img">
+    <div class="btn-contents">
+        <button class="regist-btn" @click="registration()">新規会員登録</button>
+        <button class="login-btn" @click="login()">ログイン</button>
     </div>
-</div>
+  </div>
 </template>
 
 
@@ -24,10 +15,8 @@
 
 @Component
 export default class Registration extends Vue {
-  member:any = {
-      email: '',
-  }
-  apiErrMessage:string = ""
+  
+apiErrMessage:string = ""
 async asyncData() {
 
 }
@@ -44,22 +33,66 @@ login() {
   this.$router.push("/login")
 }
 
-back() {
-  this.$router.go(-1)
-}
-
-closeModal() {
-  //this.errorText = ""
-}
-
 }
 
 </script>
 
 <style lang = "scss" scoped>
+  .logo-img {
+    width: 500px;
+    height: 500px;
+  }
+  .contents {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .regist-btn {
+    width: 245px;
+    border: none;
+    background: #000088;
+    color: #fff;
+    border-radius: 4px;
+  }
+  .login-btn {
+    width: 245px;
+    border: none;
+    background: #008800;
+    color: #fff;
+    border-radius: 4px;
+  }
+
+  @media screen and (max-width:420px){
+  .contents {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .logo-img {
+    width: 300px;
+    height: 300px;
+  }
+  .regist-btn {
+    width: 145px;
+    border: none;
+    background: #000088;
+    color: #fff;
+    border-radius: 4px;
+  }
+  .login-btn {
+    width: 145px;
+    border: none;
+    background: #008800;
+    color: #fff;
+    border-radius: 4px;
+  }
   .ly_conts {
     display: flex;
-    margin-top: 540px;
+    margin: 0 auto;
+    max-width: 400px;
+  }
+  .btn-contents {
+    max-width: 300px;
+    margin: 0 auto;
+  }
   }
   
 </style>

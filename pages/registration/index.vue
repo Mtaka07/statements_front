@@ -1,7 +1,7 @@
 <template>
     <div>
+        <h2 class="regist-title">新規会員登録</h2>
         <div class="main-contents">
-            <h2 class="regist-title">新規会員登録</h2>
             <div class="registration-warapper">
                 <form class="loginForm" action="" method="POST" @submit.prevent>
                     <div class="left-warapper">
@@ -20,12 +20,14 @@
                         </div>
                     </div>
                 </form>
-                <div class="right-warapper">
-                    <div class="google">
-                        <button class="google-btn" type="button">Googleで登録</button>
-                    </div>
-                    <div class="line">
-                        <button class="line-btn" type="button">Lineで登録</button>
+                <div class="media-contents">
+                    <div class="right-warapper">
+                        <div class="google">
+                            <button class="google-btn" type="button">Googleで登録</button>
+                        </div>
+                        <div class="line">
+                            <button class="line-btn" type="button">Lineで登録</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -78,35 +80,18 @@ back() {
 
 </script>
 <style lang="scss">
-.registration-warapper {
-    display: flex;
-}
 .registration-warapper .left-warapper {
-    flex-grow: 1; /*--幅を指定--*/
-    position: relative; /*--positionを追加--*/
-    height: 300px;
-    //line-height: 140px;
-    margin-right: 2em;
-
+    margin-bottom: 50px;
 }
 .registration-warapper .right-warapper {
     flex-grow: 1;
     height: 140px;
-    line-height: 140px;
+    line-height: 84px;
     
 }
-.registration-warapper .left-warapper::after {
-    position: absolute; /*--positionを追加--*/
-    top: 0;
-    left: 100%;
-    margin: 0 1rem;
-    content: "";
-    width: 4px; /*--縦線の太さ(幅)--*/
-    height: 354px;
-    background-color: #666666; /*--縦線の色--*/
-}
+
 .regist-inp {
-    width:300px;
+    width:295px;
     height: 25px;
 }
 .google-btn {
@@ -135,11 +120,11 @@ back() {
 .regist-title {
     display: flex;
     justify-content: center;
-    margin-bottom: 80px;
+    margin-bottom: 30px;
 }
 .main-contents {
-    margin: 0 auto;
-    width: 640px;
+    display: flex;
+    justify-content: center;
 }
 .description {
     color: #EE0000;
