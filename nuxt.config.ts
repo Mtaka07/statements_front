@@ -56,6 +56,10 @@ const config: NuxtConfig = {
     '@nuxtjs/axios'
   ],
 
+  router: {
+    //middleware: ['checkLogin']
+  },
+
   auth: {
     redirect: {
       login: '/login/',
